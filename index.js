@@ -16,10 +16,15 @@ let newApp = () => (
   <SafeAreaProvider>
     <SafeAreaConsumer>
       {insets => (
-        <View style={{paddingTop: insets.top, paddingBottom: insets.bottom}}>
+        <>
           <StatusBar barStyle="dark-content" hidden={true} />
-          <App />
-        </View>
+          <View
+            style={{
+              paddingBottom: insets.bottom,
+            }}>
+            <App />
+          </View>
+        </>
       )}
     </SafeAreaConsumer>
   </SafeAreaProvider>
